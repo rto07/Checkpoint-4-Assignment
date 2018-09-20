@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <html lang= "en">
+
+    <head>
+
+      <title>Bye Felicia</title>
+    
+    </head>
+
+  <body>
+    
+    <div id = "app"></div>
+
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js">
+</script>
+
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+       <script type="text/babel">
+
+          class Bye extends React.Component {
+            constructor(props){
+              super(props);
+              this.state = {
+                numberOfPeople: 1
+              }
+            }
+          
+            render() {
+              return (
+               <div>
+                <img src = {this.props.image} alt = "Bye Felicia"/>
+                <p>
+                  <h1>Bye {this.props.name}!</h1>
+                </p>
+                <p>
+                  <h3>
+                  Number of People: {this.state.numberOfPeople}
+                  </h3>
+                </p>
+               </div>
+              );
+             }
+        }
+              
+         const info = {
+           name: "Felicia",
+           image: "https://pixel.nymag.com/imgs/fashion/daily/2015/08/12/12-bye-felicia.w700.h700.2x.jpg"
+         }
+
+        ReactDOM.render(
+             < Bye 
+             name = {info.name}
+             image = {info.image} />,
+             document.getElementById('app')
+          );
+
+    </script>
+  </body>
+</html>
